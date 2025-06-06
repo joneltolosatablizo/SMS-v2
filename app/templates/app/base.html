@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'images/teto.ico' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    {% block styles %}
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <!-- The main title will remain here -->
+        <h1>Student Management System</h1>
+        <!-- Navigation is now moved to the sidebar -->
+    </header>
+
+    <div class="content-wrapper">
+        <!-- Sidebar for navigation and actions -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <!-- Main navigation links -->
+                <a href="{% url 'index' %}" class="sidebar-nav-link">Student</a>
+                <a href="{% url 'subject-list' %}" class="sidebar-nav-link">Subject</a>
+                <a href="{% url 'enrollment-list' %}" class="sidebar-nav-link">Enrollment</a>
+                <a href="{% url 'grade-create' %}" class="sidebar-nav-link">Grade</a>
+            </nav>
+        </aside>
+
+        <main>
+            {% block content %}
+            <!-- Your main content will be injected here -->
+            {% endblock %}
+        </main>
+    </div>
+
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>

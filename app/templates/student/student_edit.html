@@ -1,0 +1,76 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/student/student_edit.css' %}">
+{% endblock %}
+
+{% block content %}
+<h2>Edit Student</h2>
+<div class="form-wrapper">
+    <form id="edit-student-form" class="form-container">
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="middle_name">Middle Name:</label>
+                <input type="text" name="middle_name">
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" required>
+            </div>
+            <div class="form-group">
+                <label for="student_id">Student ID:</label>
+                <input type="text" name="student_id" required>
+            </div>
+            <div class="form-group full-width">
+                <label for="email">Email:</label>
+                <input type="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="section">Section:</label>
+                <select name="section" required>
+                    <option value="">Select section</option>
+                    <option value="HM">Headless Mami</option>
+                    <option value="HQ">Holy Quintet</option>
+                    <option value="WPS">Walpurgisnacht Section</option>
+                    <option value="KMS">Kyubey Monitoring Squad</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="birthdate">Birthdate:</label>
+                <input type="date" name="birthdate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sex">Sex:</label>
+                <select name="sex" required>
+                    <option value="">Select sex</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="contact_number">Contact Number:</label>
+                <input type="text" name="contact_number" placeholder="0912 345 6789" pattern="^09\d{2} \d{3} \d{4}$" required>
+            </div>
+        </div>
+        <div class="form-buttons">
+            <button type="submit" class="update-btn">Update</button>
+            <button type="button" class="cancel-btn" onclick="window.location.href='/'">Cancel</button>
+        </div>
+        <p id="edit-status"></p>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/config.js' %}"></script>
+<script src="{% static 'js/student/student_edit.js' %}"></script>
+{% endblock %}

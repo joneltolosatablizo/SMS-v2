@@ -1,0 +1,44 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/enrollment/enrollment_detail.css' %}">
+<link rel="stylesheet" href="{% static 'css/enrollment/enrollment_delete.css' %}">
+{% endblock %}
+
+{% block content %}
+<h2><a href="/enrollments/" id="back-btn">❮ Enrollment Details</a></h2>
+
+<div id="enrollment-info">
+    <p><strong>Student Name:</strong> <span id="enrollment-student-name"></span></p>
+    <p><strong>Section:</strong> <span id="enrollment-student-section"></span></p>
+    <p><strong>Subject:</strong> <span id="enrollment-subject-name"></span></p>
+    <p><strong>Enrolled On:</strong> <span id="enrollment-date"></span></p>
+
+    <div class="enrollment-actions">
+        <a id="view-profile-btn" class="action-btn view-profile" href="#">👤 View Student Profile</a>
+        <a id="unenroll-btn" class="action-btn" href="#">🗑️ Unenroll</a>
+    </div>
+</div>
+
+<div id="unenroll-modal" class="modal">
+    <div class="modal-content">
+        <h3>Confirm Unenroll</h3>
+        <p>Are you sure you want to unenroll this student from this subject?</p>
+        <form id="unenroll-form">
+            <input type="checkbox" id="unenroll-checkbox">
+            <label for="unenroll-checkbox">I understand this action cannot be undone.</label>
+            <div class="button-group">
+                <button type="button" id="cancel-unenroll">Cancel</button>
+                <button type="submit" id="confirm-unenroll-btn" disabled>Unenroll</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/config.js' %}"></script>
+<script src="{% static 'js/enrollment/enrollment_detail.js' %}"></script>
+<script src="{% static 'js/enrollment/enrollment_delete.js' %}"></script>
+{% endblock %}

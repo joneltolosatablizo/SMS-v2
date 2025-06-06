@@ -1,0 +1,48 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/subject/subject_detail.css' %}">
+<link rel="stylesheet" href="{% static 'css/subject/subject_delete.css' %}">
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'subject-list' %}" id="subject-title"><h2>Loading...</h2></a>
+<p id="subject-code" class="subject-code">Code: ...</p>
+
+<div class="subject-actions">
+    <a id="edit-btn" class="action-btn" href="#">✏️ Edit</a>
+    <a id="delete-btn" class="action-btn" href="#">🗑️ Delete</a>
+</div>
+
+<h3>Enrolled Students</h3>
+<ul id="enrolled-students">
+    <li>Loading enrolled students...</li>
+</ul>
+
+<div id="subject-delete-modal" class="modal">
+    <div class="modal-content">
+        <h3>Confirm Delete</h3>
+        <p>Are you sure you want to delete this subject?</p>
+
+        <form id="subject-delete-form">
+            <input type="checkbox" id="subject-confirm-checkbox">
+            <label for="subject-confirm-checkbox">I understand this action cannot be undone.</label>
+
+            <div class="button-group">
+                <button type="button" id="subject-cancel-delete">Cancel</button>
+                <button type="submit" id="subject-confirm-delete-btn" disabled>Delete</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/config.js' %}"></script>
+<script>
+    const subjectId = "{{ subject_id }}";
+</script>
+<script src="{% static 'js/subject/subject_detail.js' %}"></script>
+<script src="{% static 'js/subject/subject_delete.js' %}"></script>
+{% endblock %}

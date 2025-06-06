@@ -1,0 +1,90 @@
+.enroll-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.btn-enroll {
+    background-color: #108f05;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    width: fit-content;  /* 🪄 magic line */
+}
+
+.btn-enroll:hover {
+    background-color: green;
+}
+
+#enrollment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.enrollment-item {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.enrollment-item:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-left: 6px solid #108f05;
+}
+
+.enrollment-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.95rem;
+}
+
+.enrollment-actions a {
+    margin-left: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #108f05;
+}
+
+.enrollment-actions a:hover {
+    color: green;
+}
+
+.status-active {
+    color: green;
+    font-weight: bold;
+}
+
+.status-inactive {
+    color: red;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .enrollment-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .enroll-button-container {
+        justify-content: center;
+    }
+
+    .enrollment-actions {
+        margin-top: 8px;
+    }
+}

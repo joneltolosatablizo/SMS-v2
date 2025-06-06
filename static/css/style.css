@@ -1,0 +1,258 @@
+/* Base Reset & Theme */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background-color: #108f05;
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex; /* Header is still a flex container */
+    justify-content: flex-start; /* Align content (h1) to the left */
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* No direct styling for header nav here, as it's moved */
+
+/* Main Content and Sidebar Container */
+.content-wrapper {
+    display: flex;
+    flex: 1;
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+    padding: 20px 0;
+}
+
+/* Main Content */
+main {
+    flex-grow: 1;
+    padding: 0 20px;
+    margin-left: 250px; /* Adjusted for sidebar width on the left */
+    box-sizing: border-box;
+}
+
+/* Section Title */
+h2 {
+    color: #108f05;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.blue {
+    border-left: 6px solid #108f05;
+    padding-left: 15px;
+}
+
+/* Student List Container (assuming this remains in main content) */
+ul#student-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Student List Items */
+ul#student-list li {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Student name anchor link */
+ul#student-list li a {
+    color: #108f05;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+ul#student-list li a:hover {
+    color: #108f05;
+    text-decoration: underline;
+}
+
+ul#student-list li:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Text */
+ul#student-list li span {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Buttons inside each li */
+ul#student-list li button {
+    background-color: #108f05;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+ul#student-list li button:hover {
+    background-color: #0c6a04; /* Slightly darker green on hover */
+}
+
+.student-email {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 320px;
+    padding: 10px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 23px;
+    left: 12px;
+    height: 100vh;
+    padding-top: 80px; /* Adjust padding to clear header */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar h3 {
+    color: #108f05;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 100px;
+}
+
+/* Sidebar Navigation container */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px; /* Space between nav and actions */
+}
+
+/* Styling for navigation links inside the sidebar */
+.sidebar-nav-link {
+    display: block;
+    background-color: #108f05;
+    color: white;
+    padding: 12px 18px; /* Slightly larger padding for better touch targets */
+    border-radius: 6px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    margin-bottom: 10px; /* Space between sidebar nav links */
+}
+
+.sidebar-nav-link:hover {
+    background-color: #0c6a04;
+}
+
+.sidebar-actions-title {
+    color: #108f05;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-top: 1px solid #eee; /* Separator for actions section */
+    padding-top: 20px;
+    width: 100%; /* Ensure separator spans full width */
+}
+
+
+/* Existing Add Student Link inside sidebar */
+.add-student-link {
+    display: block;
+    background-color: #108f05;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.add-student-link:hover {
+    background-color: #0c6a04;
+}
+
+/* Mobile-Friendly Adjustments */
+@media (max-width: 900px) {
+    .content-wrapper {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding-top: 20px;
+        order: 2; /* Place sidebar below main content */
+    }
+
+    header {
+        padding: 10px 20px;
+        flex-direction: column; /* Stack header items on small screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    header h1 {
+        margin-bottom: 10px;
+    }
+
+    /* Remove nav styles that are no longer applicable to header on mobile */
+    nav {
+        width: auto; /* Revert to auto width for consistency if nav was present */
+        text-align: left; /* Default text alignment */
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    ul#student-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,55 @@
+.back-link {
+  color: #108f05;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: green;
+  text-decoration: underline;
+}
+
+#grade-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+#grade-table th, #grade-table td {
+  padding: 16px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+#grade-table th {
+  background-color: #108f05;
+  color: white;
+  font-weight: bold;
+}
+
+#grade-table tbody tr:hover {
+  background-color: #f1f7ff;
+}
+
+.action-btn {
+  background-color: #108f05;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  margin-right: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.action-btn:hover {
+  background-color: green;
+}
