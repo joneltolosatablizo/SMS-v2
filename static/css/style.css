@@ -8,6 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
 }
 
 /* Header Styling */
@@ -24,8 +25,8 @@ header {
 header h1 {
     margin: 0;
     font-size: 2rem;
-}
 
+}
 /* No direct styling for header nav here, as it's moved */
 
 /* Main Content and Sidebar Container */
@@ -130,7 +131,7 @@ ul#student-list li button:hover {
     width: 320px;
     padding: 10px;
     box-sizing: border-box;
-    position: fixed;
+    position:absolute;
     top: 23px;
     left: 12px;
     height: 100vh;
@@ -145,14 +146,16 @@ ul#student-list li button:hover {
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 100px;
+    position: fixed;
 }
 
 /* Sidebar Navigation container */
 .sidebar-nav {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
     margin-bottom: 20px; /* Space between nav and actions */
+
 }
 
 /* Styling for navigation links inside the sidebar */
@@ -160,15 +163,15 @@ ul#student-list li button:hover {
     display: block;
     background-color: #108f05;
     color: white;
-    padding: 12px 18px; /* Slightly larger padding for better touch targets */
-    border-radius: 6px;
-    font-size: 1rem;
+    padding: 10px 18px; /* Slightly larger padding for better touch targets */
+    border-radius: 9px;
+    font-size: 15px;
     text-decoration: none;
     transition: background-color 0.2s ease;
-    width: 100%;
+    width: 80%;
     text-align: center;
     box-sizing: border-box;
-    margin-bottom: 10px; /* Space between sidebar nav links */
+    margin-bottom: 20px; /* Space between sidebar nav links */
 }
 
 .sidebar-nav-link:hover {
